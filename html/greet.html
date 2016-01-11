@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sync gateway custom authentication</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+    <style type="text/css">
+    pre.prettyprint {
+      border: 1px solid #ccc;
+      margin-bottom: 0;
+      padding: 9.5px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+        <div class="starter-template">
+          <h1>Help</h1>
+          <p class="lead">
+            <code>POST /auth</code> to authenticate the user<br />
+            Body payload:<br />
+            <pre class="prettyprint">
+              {
+                  "username" : "peter",
+                  "password" : "lois1974"
+              }</pre><br />
+              Response OK:<br />
+              <pre class="prettyprint">
+                {
+                  "session_id" : "0caac9cd2636f234d080db99b63c0a853a949762",
+                  "expires" : "2015-12-18T12:22:41.971511315Z",
+                  "cookie_name" : "SyncGatewaySession"
+                }</pre><br />
+              Response ERROR:<br />
+              <pre class="prettyprint">
+                {
+                  "error" : "not_found",
+                  "reason" : "No such user \"peter\""
+                }</pre><br />
+          </p>
+        </div>
+
+      </div>
+  </body>
+</html>

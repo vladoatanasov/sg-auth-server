@@ -1,0 +1,6 @@
+{
+  "syncEndpoint" : "http://localhost:4985",
+  "bucket" : "default",
+  "port" : 8000,
+  "ttl" : 3600
+}
