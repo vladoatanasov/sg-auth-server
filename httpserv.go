@@ -9,7 +9,7 @@ import (
 )
 
 func handleEndpoint(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, readHTMLFile("greet.html"))
+	io.WriteString(w, "{\"error\" : \"\"}")
 }
 
 func handleAuth(w http.ResponseWriter, r *http.Request) {
@@ -20,7 +20,7 @@ func handleAuth(w http.ResponseWriter, r *http.Request) {
 		io.WriteString(w, response)
 		break
 	default:
-		io.WriteString(w, readHTMLFile("greet.html"))
+		io.WriteString(w, "{\"error\" : \"\"}")
 	}
 }
 
