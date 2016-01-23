@@ -2,7 +2,6 @@ package main
 
 import (
 	"io"
-	"io/ioutil"
 	"net/http"
 
 	"github.com/couchbaselabs/logg"
@@ -22,14 +21,4 @@ func handleAuth(w http.ResponseWriter, r *http.Request) {
 	default:
 		io.WriteString(w, "{\"error\" : \"\"}")
 	}
-}
-
-func readHTMLFile(file string) string {
-	b, err := ioutil.ReadFile("html/" + file)
-
-	if err != nil {
-		logg.LogPanic("Error reading static file %s : %v", file, err)
-	}
-
-	return string(b)
 }
